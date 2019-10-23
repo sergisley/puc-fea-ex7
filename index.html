@@ -25,15 +25,15 @@
 </p>
 <![endif]-->
 
-<header>
-  <h1 class="app-title">Título da sua página ou webapp</h1>
-  <nav>Menu de navegação principal</nav>
+<header class="header">
+  <h1 class="header__title">Literal Canvas</h1>
+  <h2 class="header__subtitle">uma singela área de desenho utilizando a API Canvas do HTML5</h2>
 </header>
-<main>
-  <section class="main-feature" id="main-feature">
+<main class="main">
+  <section class="main__mainFeature" id="main-feature">
     <canvas id="canvas"></canvas>
   </section>
-  <aside class="secundary-feature">
+  <aside class="main__secondaryFeature">
     <ul class="demoToolList">
       <li>
         <label for="changeColor">Escolha uma cor:</label>
@@ -41,7 +41,7 @@
       </li>
       <li>
         <label for="changeSize">Selecione um tamanho para o traçado: </label>
-        <select  id="changeSize">
+        <select id="changeSize">
           <option value="2">Fino</option>
           <option value="5" selected>Normal</option>
           <option value="10">Grande</option>
@@ -54,8 +54,13 @@
     </ul>
   </aside>
 </main>
-<footer>
-  Informações gerais, recursos secundários de apoio, nome do autor.
+<footer class="footer">
+  <h4 class="footer__text">
+    Desenvolvido com a metodologia de CSS BEM
+  </h4>
+  <h4 class="footer__text footer__text--floatRight">
+    Autor: Sergisley Matias
+  </h4>
 </footer>
 
 <script src="js/vendor/modernizr-3.7.1.min.js"></script>
