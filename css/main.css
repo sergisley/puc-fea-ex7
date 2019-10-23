@@ -32,3 +32,6 @@ aside.secundary-feature {
   height: 83vh;
   color: #fff;
 }
+li{
+  list-style: none;
+}
