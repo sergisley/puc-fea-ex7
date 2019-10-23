@@ -34,22 +34,28 @@
     <canvas id="canvas"></canvas>
   </section>
   <aside class="main__secondaryFeature">
-    <ul class="demoToolList">
-      <li>
-        <label for="changeColor">Escolha uma cor:</label>
-        <input type="color" id="changeColor">
+    <ul class="controlList">
+      <li class="controlList__listItem">
+        <label for="changeColor" class="controlList__listItem__label">
+          Clique abaixo para trocar de cor
+        </label>
+        <input type="color" id="changeColor" class="controlList__listItem__input">
       </li>
-      <li>
-        <label for="changeSize">Selecione um tamanho para o traçado: </label>
-        <select id="changeSize">
+      <li class="controlList__listItem">
+        <label for="changeSize" class="controlList__listItem__label">
+          Selecione um tamanho para o traçado:
+        </label>
+        <select id="changeSize" class="controlList__listItem__select">
           <option value="2">Fino</option>
           <option value="5" selected>Normal</option>
           <option value="10">Grande</option>
           <option value="20">Desnecessário</option>
         </select>
       </li>
-      <li>
-        <button id="clear" type="button">Limpar</button>
+      <li class="controlList__listItem" >
+        <button id="clear" type="button" class="controlList__listItem__button">
+          Limpar
+        </button>
       </li>
     </ul>
   </aside>

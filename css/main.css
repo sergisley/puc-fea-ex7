@@ -8,7 +8,7 @@ body {
   padding: 1vh 1vw;
   height: 11vh;
   box-sizing: border-box;
-  color: #fff;
+  color: #ffffff;
 }
 
 .main {
@@ -17,15 +17,15 @@ body {
 
 .footer {
   height: 3.1vh;
-  background-color: #242424;
+  background-color: #101010;
   padding: 10px;
 }
 
 .footer__text {
-  color: #e2e2e2;
+  color: #d9d9d9;
   float: left;
   margin-top: 2px;
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .footer__text--floatRight {
@@ -47,19 +47,51 @@ body {
 
 .main__mainFeature {
   float: left;
-  background-color: #fbfbfb;
-  width: 78.7vw;
+  background-color: #ffffff;
+  width: 80vw;
   height: 83vh;
 }
 
 .main__secondaryFeature {
   float: right;
-  background-color: #242424;
-  width: 20.2vw;
+  background-color: #101010;
+  width: 18.9vw;
   height: 83vh;
-  color: #fff;
+  color: #ffffff;
 }
 
-li {
-  list-style: none;
+.controlList {
+  padding: 20px;
 }
+.controlList controlList__listItem {
+  list-style: none;
+  margin-bottom: 40px;
+}
+.controlList .controlList__listItem__label {
+  display: block;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.controlList .controlList__listItem__input {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: 0;
+  height: 50px;
+}
+.controlList .controlList__listItem__select {
+  height: 40px;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+}
+.controlList .controlList__listItem__button {
+  background-color: #000000;
+  width: 100%;
+  color: #ffffff;
+  height: 40px;
+  border: 1px solid #222;
+  font-size: 1.1em;
+}
+
+/*# sourceMappingURL=main.css.map */

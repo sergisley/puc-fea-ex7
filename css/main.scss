@@ -1,0 +1,110 @@
+$cian: #006c7a;
+$black: #000000;
+$gray: #222;
+$white: #ffffff;
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+.header {
+  background-color: #006c7a;
+  padding: 1vh 1vw;
+  height: 11vh;
+  box-sizing: border-box;
+  color: $white;
+}
+
+.main {
+  height: 83vh;
+}
+
+.footer {
+  height: 3.1vh;
+  background-color: darken($gray, 7%);
+  padding: 10px;
+}
+
+.footer__text {
+  color: darken($white, 15%);
+  float: left;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.footer__text--floatRight {
+  float: right;
+}
+
+.header__title {
+  margin-top: 2px;
+  font-size: 22px;
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+}
+
+.header__subtitle {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.main__mainFeature {
+  float: left;
+  background-color: $white;
+  width: 80vw;
+  height: 83vh;
+}
+
+.main__secondaryFeature {
+  float: right;
+  background-color: darken($gray, 7%);
+  width: 18.9vw;
+  height: 83vh;
+  color: $white;
+}
+
+.controlList {
+  padding: 20px;
+
+  controlList__listItem {
+    list-style: none;
+    margin-bottom: 40px;
+  }
+
+  .controlList__listItem__label {
+    display: block;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .controlList__listItem__input {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background: 0;
+    height: 50px;
+  }
+
+  .controlList__listItem__select {
+    height: 40px;
+    width: 100%;
+    background-color: $black;
+    color: $white;
+  }
+
+  .controlList__listItem__button {
+    background-color: $black;
+    width: 100%;
+    color: $white;
+    height: 40px;
+    border: 1px solid $gray;
+    font-size: 1.1em;
+  }
+
+}
+
