@@ -1,26 +1,36 @@
+window.onload = () => {
+
+  addCanvasListeners();
+
+  addInputListeners();
+
+  resizeCanvas();
+
+};
+
 let clickX = [];
 let clickY = [];
 let clickDrag = [];
-var paint;
+let paint;
 
 let currentColor = '#000000';
 let clickColor = [];
 
 let clickSize = [];
-var currentSize = "2";
+let currentSize = "5";
 
-window.onload = () => {
 
-  canvas = document.getElementById('canvas');
-  context = canvas.getContext("2d");
+const addCanvasListeners = () => {
+
+  let canvas = document.getElementById('canvas');
 
   window.addEventListener('resize', resizeCanvas, false);
 
-  canvas.addEventListener('mousedown', function (e) {
+  canvas.addEventListener('mousedown', async function (e) {
 
     paint = true;
 
-    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+    await addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
 
     redraw();
   }, false);
@@ -32,74 +42,103 @@ window.onload = () => {
     }
   }, false);
 
-  canvas.addEventListener('mouseup', function () {
+  canvas.addEventListener('mouseup', () => {
     paint = false;
   }, false);
 
-  canvas.addEventListener('mouseleave', function () {
+  canvas.addEventListener('mouseleave', () => {
     paint = false;
   }, false);
-
-
-  changeColorInput = document.getElementById('changeColor');
-  changeColorInput.addEventListener('change', function () {
-    currentColor = changeColor.value;
-  }, false);
-
-  changeSizeInput = document.getElementById('changeSize');
-  changeSizeInput.addEventListener('change', function () {
-    currentSize = changeSizeInput.value;
-  }, false);
-
-
-  document.getElementById('clear')
-    .addEventListener('click', function () {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      clickX = [];
-      clickY = [];
-      clickDrag = [];
-      clickColor = [];
-      clickSize = [];
-    }, false);
-
-  resizeCanvas();
 
 };
 
-function resizeCanvas() {
+
+const addInputListeners = () => {
+
+  document
+    .getElementById('changeColor')
+    .addEventListener('change', function () {
+      currentColor = this.value;
+    }, false);
+
+  document
+    .getElementById('changeSize')
+    .addEventListener('change', function () {
+      currentSize = this.value;
+    }, false);
+
+
+  document.getElementById('clear')
+    .addEventListener('click', clearCanvas(), false);
+
+};
+
+
+const clearCanvas = () => {
+  let context = document.getElementById('canvas').getContext("2d");
+
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  clickX = [];
+  clickY = [];
+  clickDrag = [];
+  clickColor = [];
+  clickSize = [];
+
+};
+
+
+const resizeCanvas = () => {
 
   mainFeaturePoperties = getComputedStyle(document.getElementById('main-feature'));
+
+  let canvas = document.getElementById('canvas');
 
   canvas.width = parseInt(mainFeaturePoperties.width);
   canvas.height = parseInt(mainFeaturePoperties.height);
 
   redraw();
-}
+};
 
-function addClick(x, y, dragging) {
+
+const addClick = async (x, y, dragging = false) => {
   clickX.push(x);
   clickY.push(y);
   clickDrag.push(dragging);
   clickColor.push(currentColor);
   clickSize.push(currentSize);
-}
+};
 
-function redraw() {
+
+const redraw = () => {
+
+  const promises = clickX.map(async (item, index) => {
+    drawLIne(item, index);
+  });
+
+  Promise.all(promises);
+
+};
+
+
+const drawLIne = (item, index) => {
+
+  let context = document.getElementById('canvas').getContext("2d");
 
   context.lineJoin = "round";
 
-  for (var i = 0; i < clickX.length; i++) {
-    context.beginPath();
-    if (clickDrag[i] && i) {
-      context.moveTo(clickX[i - 1], clickY[i - 1]);
-    } else {
-      context.moveTo(clickX[i] - 1, clickY[i]);
-    }
+  context.beginPath();
 
-    context.lineTo(clickX[i], clickY[i]);
-    context.closePath();
-    context.strokeStyle = clickColor[i];
-    context.lineWidth = clickSize[i];
-    context.stroke();
+  if (clickDrag[index] && index) {
+    context.moveTo(clickX[index - 1], clickY[index - 1]);
+  } else {
+    context.moveTo(item - 1, clickY[index]);
   }
-}
+
+  context.lineTo(item, clickY[index]);
+  context.closePath();
+  context.strokeStyle = clickColor[index];
+  context.lineWidth = clickSize[index];
+  context.stroke();
+
+};
