@@ -69,7 +69,7 @@ const addInputListeners = () => {
 
 
   document.getElementById('clear')
-    .addEventListener('click', clearCanvas(), false);
+    .addEventListener('click', clearCanvas, false);
 
 };
 
