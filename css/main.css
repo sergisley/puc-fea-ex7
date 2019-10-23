@@ -63,7 +63,7 @@ body {
 .controlList {
   padding: 20px;
 }
-.controlList controlList__listItem {
+.controlList .controlList__listItem {
   list-style: none;
   margin-bottom: 40px;
 }
