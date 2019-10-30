@@ -3,9 +3,7 @@ import '../css/normalize.css'
 import '../css/main.scss'
 
 
-module.exports = function () {
 
-return `
 
 window.onload = () => {
 
@@ -99,7 +97,7 @@ const clearCanvas = () => {
 
 const resizeCanvas = () => {
 
-    mainFeaturePoperties = getComputedStyle(document.getElementById('main-feature'));
+    let mainFeaturePoperties = getComputedStyle(document.getElementById('main-feature'));
 
     let canvas = document.getElementById('canvas');
 
@@ -152,4 +150,3 @@ const drawLIne = (item, index) => {
 
 };
 
-`;}
