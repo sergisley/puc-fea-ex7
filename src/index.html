@@ -1,67 +1,58 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
+<html class="no-js" lang="pt-BR">
 <head>
-    <meta charset="utf-8"/>
-    <title>Projeto Front-end</title>
-    <meta name="description" content=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8"/>
+  <title>Projeto Front-end Avançado</title>
+  <meta name="description" content=""/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <!-- Place favicon.ico in the root directory -->
+  <!-- Place favicon.ico in the root directory -->
 
-    <meta name="theme-color" content="#fafafa"/>
+  <meta name="theme-color" content="#fafafa"/>
 </head>
-
 <body>
-<!--[if IE]>
-<p class="browserupgrade">
-    You are using an <strong>outdated</strong> browser. Please
-    <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-    your experience and security.
-</p>
-<![endif]-->
-
 <header class="header">
-    <h1 class="header__title">Literal Canvas</h1>
-    <h2 class="header__subtitle">uma singela área de desenho utilizando a API Canvas do HTML5</h2>
+  <h1 class="header__title" role="heading" aria-level="1">Literal Canvas</h1>
+  <h2 class="header__subtitle" role="heading" aria-level="2">uma singela área de desenho utilizando a API Canvas do HTML5</h2>
 </header>
 <main class="main">
-    <section class="main__mainFeature" id="main-feature">
-        <canvas id="canvas"></canvas>
-    </section>
-    <aside class="main__secondaryFeature">
-        <ul class="controlList">
-            <li class="controlList__listItem">
-                <label for="changeColor" class="controlList__listItem__label">
-                    Clique abaixo para trocar de cor
-                </label>
-                <input type="color" id="changeColor" class="controlList__listItem__input">
-            </li>
-            <li class="controlList__listItem">
-                <label for="changeSize" class="controlList__listItem__label">
-                    Selecione um tamanho para o traçado:
-                </label>
-                <select id="changeSize" class="controlList__listItem__select">
-                    <option value="2">Fino</option>
-                    <option value="5" selected>Normal</option>
-                    <option value="15">Grande</option>
-                    <option value="30">Desnecessário</option>
-                </select>
-            </li>
-            <li class="controlList__listItem">
-                <button id="clear" type="button" class="controlList__listItem__button">
-                    Limpar
-                </button>
-            </li>
-        </ul>
-    </aside>
+  <section class="main__mainFeature" id="main-feature" role=”main”>
+    <canvas id="canvas"  aria-label="Área de desenho" role="img"></canvas>
+  </section>
+  <aside class="main__secondaryFeature">
+    <ul class="controlList" role="form">
+      <li class="controlList__listItem">
+        <label for="changeColor" class="controlList__listItem__label">
+          Clique abaixo para trocar de cor
+        </label>
+        <input type="color" id="changeColor" class="controlList__listItem__input" aria-controls="main-feature">
+      </li>
+      <li class="controlList__listItem">
+        <label for="changeSize" class="controlList__listItem__label" aria-controls="main-feature">
+          Selecione um tamanho para o traçado:
+        </label>
+        <select id="changeSize" class="controlList__listItem__select" aria-controls="main-feature">
+          <option value="2">Fino</option>
+          <option value="5" selected>Normal</option>
+          <option value="15">Grande</option>
+          <option value="30">Desnecessário</option>
+        </select>
+      </li>
+      <li class="controlList__listItem">
+        <button id="clear" type="button" class="controlList__listItem__button" role="button" aria-pressed="false">
+          Limpar
+        </button>
+      </li>
+    </ul>
+  </aside>
 </main>
 <footer class="footer">
-    <h4 class="footer__text">
-        Desenvolvido com a metodologia de CSS BEM & Webpack!
-    </h4>
-    <h4 class="footer__text footer__text--floatRight">
-        Autor: Sergisley Matias
-    </h4>
+  <span class="footer__text" role=”contentinfo”>
+    Desenvolvido com a metodologia de CSS BEM & Webpack!
+  </span>
+  <span class="footer__text footer__text--floatRight" role=”contentinfo”>
+    Autor: Sergisley Matias
+  </span>
 </footer>
 
 </body>
